@@ -18,17 +18,8 @@ like [Vue](https://github.com/vuejs/vue).
 
 ### Vanilla – onClickOutside()
 
-This function registers an event listener for the `focusout` event of the given
-element. A click outside of the element causes it to lose its focus, which will
-fire a `focusout` event. If the focus was lost to an _outside_ element, the
-provided callback function is called.
-
-In order for an element to be able to lose its focus, it must first be focused
-and therefore needs the `tabindex` attribute set. If the provided element has no
-`tabindex` set, `onClickOutside()` will set its `tabindex` to `-1`.
-
 ```html
-<p id="el">Click me, then click outside of me.</p>
+<p id="el">Click outside of me.</p>
 ```
 
 ```ts
@@ -54,7 +45,7 @@ is fired. The callback function is called only if the focus was lost to an
 _outside_ element.
 
 Note that the `tabindex` attribute of the element must be manually set,
-otherwise it cannot be focused and therefore it cannot lose its focus.
+otherwise it cannot be focused and therefore cannot lose its focus.
 
 ```html
 <template>

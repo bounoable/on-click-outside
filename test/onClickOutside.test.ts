@@ -131,6 +131,38 @@ describe('onClickOutside', () => {
       expect(el.tabIndex, `tabIndex should be ${index}`).toBe(index)
     }
   })
+
+  it(`focuses the element if the 'focus' option wasn't set to false`, () => {
+    const { el } = makeDocument()
+
+    expect(
+      document.activeElement,
+      'document.activeElement should not be the element'
+    ).not.toBe(el)
+
+    onClickOutside(el, () => {})
+
+    expect(
+      document.activeElement,
+      'document.activeElement should be the element'
+    ).toBe(el)
+  })
+
+  it(`does not focus the element if the 'focus' option was set to false`, () => {
+    const { el } = makeDocument()
+
+    expect(
+      document.activeElement,
+      'document.activeElement should not be the element'
+    ).not.toBe(el)
+
+    onClickOutside(el, () => {}, { focus: false })
+
+    expect(
+      document.activeElement,
+      'document.activeElement should not be the element'
+    ).not.toBe(el)
+  })
 })
 
 function makeDocument() {
@@ -142,6 +174,7 @@ function makeDocument() {
   el.appendChild(child)
   doc.appendChild(el)
   doc.appendChild(outside)
+  document.body.appendChild(doc)
 
   return {
     doc,
