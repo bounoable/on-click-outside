@@ -1,6 +1,6 @@
 {
   "name": "@bounoable/on-click-outside",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Detect clicks outside of an element.",
   "main": "dist/index.esm.js",
   "repository": "https://github.com/bounoable/on-click-outside",
