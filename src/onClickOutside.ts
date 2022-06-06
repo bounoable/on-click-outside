@@ -62,8 +62,8 @@ export function makeFocusOutHandler(
   }
 }
 
-function ensureTabIndex(el: Node) {
-  if (el instanceof HTMLElement && el.getAttribute('tabindex') === null) {
+function ensureTabIndex(el: HTMLElement) {
+  if (el.getAttribute('tabindex') === null) {
     el.tabIndex = -1
   }
 }
@@ -73,16 +73,16 @@ function focusLost(
 ): event is FocusEvent & { relatedTarget: EventTarget } {
   const { currentTarget, relatedTarget } = event
 
-  if (!(currentTarget && relatedTarget)) {
+  if (!currentTarget) {
     return false
   }
 
-  if (!(relatedTarget instanceof Node)) {
-    return false
+  if (!relatedTarget) {
+    return true
   }
 
   return (
     currentTarget !== relatedTarget &&
-    !(currentTarget as Node).contains(relatedTarget)
+    !(currentTarget as Node).contains(relatedTarget as Node)
   )
 }

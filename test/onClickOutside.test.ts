@@ -132,7 +132,7 @@ describe('onClickOutside', () => {
     }
   })
 
-  it(`focuses the element if the 'focus' option wasn't set to false`, () => {
+  it(`focuses the element if the "focus" option wasn't set to false`, () => {
     const { el } = makeDocument()
 
     expect(
@@ -148,7 +148,7 @@ describe('onClickOutside', () => {
     ).toBe(el)
   })
 
-  it(`does not focus the element if the 'focus' option was set to false`, () => {
+  it(`does not focus the element if the "focus" option was set to false`, () => {
     const { el } = makeDocument()
 
     expect(
@@ -170,6 +170,8 @@ function makeDocument() {
   const el = document.createElement('div')
   const outside = document.createElement('div')
   const child = document.createElement('div')
+
+  outside.tabIndex = -1
 
   el.appendChild(child)
   doc.appendChild(el)
