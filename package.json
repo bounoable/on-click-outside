@@ -16,7 +16,10 @@
     "watch": "vitest",
     "test": "vitest run",
     "build": "vite build && pnpm generate-types",
-    "generate-types": "tsc --project ./tsconfig.json"
+    "generate-types": "tsc --project ./tsconfig.json",
+    "patch": "pnpm build && pnpm version patch && pnpm publish",
+    "minor": "pnpm build && pnpm version minor && pnpm publish",
+    "major": "pnpm build && pnpm version major && pnpm publish"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
