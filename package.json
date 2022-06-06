@@ -1,0 +1,21 @@
+{
+  "name": "@bounoable/on-click-outside",
+  "version": "0.1.0",
+  "description": "Detect clicks outside of an element.",
+  "main": "dist/index.esm.js",
+  "repository": "https://github.com/bounoable/on-click-outside",
+  "author": "Saman Hosseini <bonoable@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "happy-dom": "^5.0.0",
+    "vite": "^2.9.9",
+    "vitest": "^0.14.1"
+  },
+  "scripts": {
+    "watch": "vitest",
+    "test": "vitest run",
+    "build": "vite build && pnpm generate-types",
+    "generate-types": "tsc --project ./tsconfig.json",
+    "publish": "pnpm publish --registry=https://npm.pkg.github.com"
+  }
+}
