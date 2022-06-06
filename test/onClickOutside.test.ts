@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { makeFocusOutHandler, onClickOutside } from '../src/onClickOutside'
+import { makeFocusOutHandler, onClickOutside } from '../src'
 
 describe('makeFocusOutHandler', () => {
   it('calls the provided function when the element loses its focus to an outside element', () => {
