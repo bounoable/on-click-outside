@@ -24,10 +24,10 @@ import { onClickOutside } from '@bounoable/on-click-outside'
 const el = document.querySelector('#el')
 
 const removeListener = onClickOutside(el, (
-	target: EventTarget,
-	event: FocusEvent
+  target: EventTarget,
+  event: FocusEvent
 ) => {
-	console.log(`${el} lost its focus to ${target}.`)
+  console.log(`${el} lost its focus to ${target}.`)
 })
 
 // Stop listening to outside clicks.
@@ -42,24 +42,24 @@ import { defineComponent } from 'vue'
 import { makeFocusOutHandler } from '@bounoable/on-click-outside'
 
 export default defineComponent({
-	setup() {
-		const handleFocusOut = makeFocusOutHandler((
-			target: EventTarget,
-			event: FocusEvent
-		) => {
-			console.log(`${event.currentTarget} lost its focus to ${event.relatedTarget}.`)
-		})
+  setup() {
+    const handleFocusOut = makeFocusOutHandler((
+      target: EventTarget,
+      event: FocusEvent
+    ) => {
+      console.log(`${event.currentTarget} lost its focus to ${event.relatedTarget}.`)
+    })
 
-		return {
-			handleFocusOut,
-		}
-	}
+    return {
+      handleFocusOut,
+    }
+  }
 })
 </script>
 
 <template>
-	<p tabindex="-1" @focusout="handleFocusOut">
-		Click me, then click outside of me.
-	</p>
+  <p tabindex="-1" @focusout="handleFocusOut">
+    Click me, then click outside of me.
+  </p>
 </template>
 ```
