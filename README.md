@@ -1,5 +1,7 @@
 # Detect outside clicks
 
+[![Test](https://github.com/bounoable/on-click-outside/actions/workflows/test.yml/badge.svg)](https://github.com/bounoable/on-click-outside/actions/workflows/test.yml)
+
 Detect clicks _outside_ of an element by listening to its `focusout` event.
 
 ## Installation
